@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bilal × Pedro — 7 Abril 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1814;
+    --ink-2: #3d3a34;
+    --ink-3: #7a7670;
+    --ink-4: #b5b0a8;
+    --paper: #f5f2ed;
+    --paper-2: #ede9e2;
+    --paper-3: #e2ddd5;
+    --accent: #c0570e;
+    --accent-light: #f0d5c0;
+    --teal: #0f6e56;
+    --teal-light: #d0ede5;
+    --blue: #185fa5;
+    --blue-light: #daeaf8;
+    --purple: #534ab7;
+    --purple-light: #e8e7fc;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 4rem 2rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(192,87,14,0.12);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 30%;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(15,110,86,0.1);
+  }
+  .header-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .header-meta {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    margin-bottom: 1rem;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--paper);
+    margin-bottom: 1.25rem;
+  }
+  .header h1 em {
+    color: #e0836a;
+    font-style: italic;
+  }
+  .header-desc {
+    font-size: 15px;
+    color: var(--ink-4);
+    max-width: 560px;
+    line-height: 1.7;
+  }
+  .header-tags {
+    margin-top: 1.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .header-tag {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 4px 12px;
+    border-radius: 99px;
+    border: 0.5px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ── Nav ── */
+  .nav {
+    background: var(--ink-2);
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    overflow-x: auto;
+  }
+  .nav-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+  }
+  .nav a {
+    display: block;
+    padding: 0.85rem 1rem;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav a:hover { color: var(--paper); border-bottom-color: var(--accent); }
+
+  /* ── Main layout ── */
+  .main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  /* ── Section ── */
+  .section {
+    margin-bottom: 3.5rem;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--paper-3);
+  }
+
+  /* ── Blockquote ── */
+  .quote {
+    border-left: 3px solid var(--accent);
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+  }
+  .quote p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--ink);
+    font-style: italic;
+  }
+  .quote-note {
+    font-size: 12px;
+    color: var(--ink-4);
+    margin-top: 0.4rem;
+  }
+
+  /* ── Highlight bar ── */
+  .hl {
+    border-left: 2px solid var(--accent);
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.85rem;
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.65;
+    background: var(--paper-2);
+    border-radius: 0 6px 6px 0;
+  }
+  .hl.teal { border-left-color: var(--teal); }
+  .hl.blue { border-left-color: var(--blue); }
+  .hl.amber { border-left-color: #ba7517; }
+
+  /* ── Cards grid ── */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 540px) { .cards { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--paper-2);
+    border: 0.5px solid var(--paper-3);
+    border-radius: 10px;
+    padding: 1.1rem 1.25rem;
+  }
+  .card-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .card-body {
+    font-size: 13px;
+    color: var(--ink-3);
+    line-height: 1.6;
+  }
+  .card.full { grid-column: 1 / -1; }
+
+  /* ── Big insight box ── */
+  .insight {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1rem;
+  }
+  .insight-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    margin-bottom: 0.75rem;
+  }
+  .insight p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .insight p strong { color: #e0836a; font-weight: 500; font-style: normal; }
+
+  /* ── Tags ── */
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.5rem; }
+  .tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 99px;
+    letter-spacing: 0.04em;
+  }
+  .tag.blue { background: var(--blue-light); color: var(--blue); }
+  .tag.teal { background: var(--teal-light); color: var(--teal); }
+  .tag.amber { background: #faeeda; color: #633806; }
+  .tag.coral { background: #faece7; color: #4a1b0c; }
+  .tag.purple { background: var(--purple-light); color: var(--purple); }
+
+  /* ── Divider ── */
+  hr { border: none; border-top: 0.5px solid var(--paper-3); margin: 2.5rem 0; }
+
+  /* ── Question callout ── */
+  .callout {
+    border: 1px solid var(--teal-light);
+    background: linear-gradient(135deg, #f0faf6 0%, var(--paper) 100%);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .callout-q {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--teal);
+    font-style: italic;
+    margin-bottom: 6px;
+  }
+  .callout-body { font-size: 13px; color: var(--ink-3); line-height: 1.65; }
+
+  /* ── Next steps ── */
+  .steps-list { list-style: none; }
+  .steps-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0.75rem 0;
+    border-bottom: 0.5px solid var(--paper-3);
+    font-size: 14px;
+    color: var(--ink-2);
+  }
+  .steps-list li:last-child { border-bottom: none; }
+  .steps-list li::before {
+    content: '→';
+    color: var(--accent);
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    background: var(--paper-2);
+    border-top: 0.5px solid var(--paper-3);
+    padding: 2rem;
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-4);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── Animations ── */
+  .section { opacity: 0; transform: translateY(18px); animation: fadeUp 0.5s ease forwards; }
+  .section:nth-child(1) { animation-delay: 0.05s; }
+  .section:nth-child(2) { animation-delay: 0.12s; }
+  .section:nth-child(3) { animation-delay: 0.19s; }
+  .section:nth-child(4) { animation-delay: 0.26s; }
+  .section:nth-child(5) { animation-delay: 0.33s; }
+  .section:nth-child(6) { animation-delay: 0.40s; }
+  .section:nth-child(7) { animation-delay: 0.47s; }
+  .section:nth-child(8) { animation-delay: 0.54s; }
+  .section:nth-child(9) { animation-delay: 0.61s; }
+  .section:nth-child(10) { animation-delay: 0.68s; }
+  @keyframes fadeUp { to { opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <div class="header-meta">Notas de reunião · 7 de Abril de 2025</div>
+    <h1>Bilal × Pedro<br><em>Inteligência massificada</em></h1>
+    <p class="header-desc">Conversa de descoberta sobre o panorama de AI, oportunidades de mercado, modelos de negócio e colaboração potencial.</p>
+    <div class="header-tags">
+      <span class="header-tag">AI Strategy</span>
+      <span class="header-tag">Business Models</span>
+      <span class="header-tag">Voice Agents</span>
+      <span class="header-tag">Collaboration</span>
+      <span class="header-tag">Wellness Tech</span>
+    </div>
+  </div>
+</header>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#framing">Framing</a>
+    <a href="#analogias">Analogias</a>
+    <a href="#emocoes">Emoções</a>
+    <a href="#mercado">Mercado</a>
+    <a href="#venda">Venda</a>
+    <a href="#collab">Colaboração</a>
+    <a href="#stack">Stack</a>
+    <a href="#proximos">Próximos passos</a>
+  </div>
+</nav>
+
+<!-- Main -->
+<main class="main">
+
+  <!-- Big Picture -->
+  <div class="section" id="framing">
+    <div class="section-label">Grande imagem</div>
+
+    <div class="insight">
+      <div class="insight-label">A revolução</div>
+      <p>A internet massificou a <strong>informação</strong>.<br>A AI está a massificar a <strong>inteligência</strong>.<br>Esta janela de transição — talvez 2 anos — é uma oportunidade rara.</p>
+    </div>
+
+    <div class="hl">CLI → GUI → CLI → ??? (GUI again). Cada revolução redefine a camada de interface. Estamos num desses momentos.</div>
+    <div class="hl">O gap não é técnico — é de modelos mentais. A maioria das empresas já paga pelas ferramentas mas não extrai 1% do potencial. A ferramenta está lá. Ninguém sabe o que ela faz de verdade.</div>
+  </div>
+
+  <hr>
+
+  <!-- Analogias -->
+  <div class="section" id="analogias">
+    <div class="section-label">Analogias centrais</div>
+
+    <div class="quote">
+      <p>"Tens um supercomputador no bolso — equivalente ao que levou o homem à Lua, ou mais — e usas-o para ver vídeos de gatos fofos no TikTok."</p>
+    </div>
+
+    <div class="quote">
+      <p>"É como usar um PC como lâmpada à noite. A ferramenta está lá, a luz está acesa, mas o resto do potencial fica no escuro."</p>
+    </div>
+
+    <p style="font-size:12px; color:var(--ink-4); margin-top: 0.5rem; font-style: italic;">Copy direto para formações e pitch a clientes — funcionam como abertura para clientes céticos.</p>
+
+    <hr>
+
+    <div class="section-label" style="margin-top:1.5rem">Modelos mentais</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">Porta-aviões vs jato</div>
+        <div class="card-body">Grandes empresas são porta-aviões — lentos a virar. A agilidade vem dos jatos (equipas internas, startups) que mostram o caminho. A chave é ser milimétrico: não "muda tudo", mas "10 graus à esquerda."</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Builder vs arquiteto</div>
+        <div class="card-body">Duas energias necessárias: o divergente ADHD (explora, testa, expande o possível) e o arquiteto/operador (converge, lança, mantém). Boas equipas precisam das duas. A tensão entre ideação e execução é o desafio central.</div>
+      </div>
+      <div class="card full">
+        <div class="card-title">Tudo é possível criar — por isso o que escolhemos criar é tão importante</div>
+        <div class="card-body">Quando a barreira técnica desaparece, a escolha torna-se o ato mais estratégico. Foco não é limitação — é vantagem. O croissant shop bate o restaurante genérico. Nicho beats everything.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Temas emocionais -->
+  <div class="section" id="emocoes">
+    <div class="section-label">Temas emocionais</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">✦ Momento inspirador</div>
+        <div class="card-body">Recuperar a vontade criadora. A AI dissolve os bloqueadores de anos — a fila de 6 meses de IT, o designer que não podias pagar, as quintinhas departamentais. Somos criadores por natureza. Isto é devolver às pessoas a energia de segunda-feira de manhã.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">⚡ Momento de tensão</div>
+        <div class="card-body">Sink or swim. Quem não aprender a trabalhar com AI é substituído por quem sabe — não por agentes amanhã, mas por outros humanos 10x mais eficientes. O ambiente muda demasiado rápido para esperar.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Mercado -->
+  <div class="section" id="mercado">
+    <div class="section-label">Insights de mercado</div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">PMEs: soluções, não formação</div>
+        <div class="card-body">Um gabinete de contabilidade com 12 pessoas não precisa de um curso de Copilot — precisa de uma app que classifica faturas e substitui o Excel. É isso que pagam. Formação é a porta de entrada, solução é o produto.</div>
+        <div class="tags" style="margin-top:8px">
+          <span class="tag coral">B2B</span>
+          <span class="tag amber">SMB</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Grandes empresas: piloto → ROI → aprovação</div>
+        <div class="card-body">Modelo Fnac: piloto com chefias, construir agente em sessão, medir tempo poupado → ROI → aprovação. 1h/dia × 12 meses = número concreto. Sem ROI na sala, não há decisão.</div>
+        <div class="tags" style="margin-top:8px">
+          <span class="tag blue">Enterprise</span>
+        </div>
+      </div>
+      <div class="card full">
+        <div class="card-title">Voice AI agents — próxima fronteira (projeto em curso)</div>
+        <div class="card-body">Bilal tem protótipo funcional para gestão de condomínio (chamadas perdidas = clientes perdidos). Também testado em imobiliária. O caso killer: trades (canalizadores, eletricistas) não podem atender enquanto trabalham. Chamada perdida = dinheiro perdido — imediato, concreto, fácil de vender.</div>
+        <div class="tags" style="margin-top:8px">
+          <span class="tag teal">Live project</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Framework de venda -->
+  <div class="section" id="venda">
+    <div class="section-label">Framework de venda & entrega</div>
+
+    <div class="callout">
+      <div class="callout-q">"O que não era possível antes — e agora é?"</div>
+      <div class="callout-body">Esta é a pergunta de descoberta. Usá-la com clientes antes de propor qualquer solução. Deixa-os articular a dor no próprio vocabulário deles — esse vocabulário torna-se o copy da proposta.</div>
+    </div>
+
+    <div class="hl teal"><strong>Quick wins personalizados por cliente.</strong> Para cada empresa, identificar o que antes era impossível e agora é trivial. Background do Teams, atas automáticas, classificação de faturas, agente de atendimento. O que vale para <em>este</em> cliente específico — não uma lista genérica.</div>
+    <div class="hl teal"><strong>ROI imediato e visível.</strong> 1h/dia poupada × 12 meses = número concreto. A administração aprova quando vê o cálculo. Construir o ROI na sala durante o piloto.</div>
+  </div>
+
+  <hr>
+
+  <!-- Colaboração -->
+  <div class="section" id="collab">
+    <div class="section-label">Colaboração potencial</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">Voice agent para serviços</div>
+        <div class="card-body">Bilal tem o stack técnico (motor construído, número ativo). Pedro traz produto, UX e domínio (background Fixly — home services). Ideia: rececionista de voz white-label + mini CRM para trades e serviços. Chave na mão, customização mínima por cliente.</div>
+        <div class="tags" style="margin-top:8px">
+          <span class="tag teal">Mais concreto</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Wellness / saúde mental</div>
+        <div class="card-body">Interseção tech + terapia, yoga, trabalho somático. Bilal testou chatbot emocional (Tavus). Psicóloga contacto levantou interesse — mas alerta: Ordem dos Psicólogos tem restrições. Ângulo pode ser "companheiro motivacional" em vez de ferramenta clínica.</div>
+        <div class="tags" style="margin-top:8px">
+          <span class="tag purple">Médio prazo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Stack -->
+  <div class="section" id="stack">
+    <div class="section-label">Stack discutido</div>
+    <div class="tags">
+      <span class="tag blue">Claude Sonnet</span>
+      <span class="tag blue">Claude Code / terminal</span>
+      <span class="tag teal">Gemini / Google AI Studio</span>
+      <span class="tag teal">NotebookLM</span>
+      <span class="tag purple">Lovable</span>
+      <span class="tag purple">Trae / Cursor / Windsurf</span>
+      <span class="tag amber">Open Router</span>
+      <span class="tag amber">GLM-Z1 (coding económico)</span>
+      <span class="tag amber">Vercel / Netlify</span>
+      <span class="tag amber">Neon DB</span>
+      <span class="tag coral">Eleven Labs (voz)</span>
+      <span class="tag coral">Tavus (video AI agent)</span>
+      <span class="tag coral">Microsoft Copilot Studio</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Próximos passos -->
+  <div class="section" id="proximos">
+    <div class="section-label">Próximos passos</div>
+    <ul class="steps-list">
+      <li>Follow up com Bilal (WhatsApp trocado) — agendar próxima sessão focada no voice agent</li>
+      <li>Explorar colaboração: Pedro faz produto & UX, Bilal fornece stack técnico</li>
+      <li>Almoço com Paulo — obter perspetiva e explorar sinergias</li>
+      <li>Explorar Open Router para routing de modelos por tipo de tarefa</li>
+      <li>Escolher <strong>um</strong> foco, definir o primeiro projeto e lançar</li>
+    </ul>
+  </div>
+
+</main>
+
+<footer class="footer">
+  Bilal × Pedro · Abril 2025 · Confidencial
+</footer>
+
+</body>
+</html>
